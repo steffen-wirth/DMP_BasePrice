@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<DerModPro_BasePrice>
+			<version>0.1.0</version>
+		</DerModPro_BasePrice>
+	</modules>
+
+	<global>
+		<models>
+			<baseprice>
+				<class>DerModPro_BasePrice_Model</class>
+			</baseprice>
+		</models>
+		<helpers>
+			<baseprice>
+				<class>DerModPro_BasePrice_Helper</class>
+			</baseprice>
+		</helpers>
+	</global>
+
+	<adminhtml>
+        <translate>
+            <modules>
+                <DerModPro_BasePrice>
+                     <files>
+                          <default>DerModPro_BasePrice.csv</default>
+                     </files>
+                </DerModPro_BasePrice>
+            </modules>
+        </translate>
+	</adminhtml>
+	
+    <frontend>
+        <layout>
+            <updates>
+                <baseprice>
+                    <file>baseprice.xml</file>
+                </baseprice>
+            </updates>
+        </layout>
+    </frontend>
+	
+	<default>
+		<catalog>
+			<baseprice>
+				<disable_ext>0</disable_ext>
+				<frontend_label>Base Price</frontend_label>
+				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>
+				<default_product_unit>ML</default_product_unit>
+				<default_reference_unit>L</default_reference_unit>
+				<default_reference_amount>1</default_reference_amount>
+				<!-- conversion tables -->
+				<convert>
+					<!-- weight -->
+					<MG>
+						<to>
+							<G>0.001000</G>
+							<KG>0.000001</KG>
+							<LBS>0.00000220462257811</LBS>
+						</to>
+					</MG>
+					<G>
+						<to>
+							<MG>1000</MG>
+							<KG>0.001</KG>
+							<LBS>0.00220462257811</LBS>
+						</to>
+					</G>
+					<LBS>
+						<to>
+							<MG>453592.379</MG>
+							<G>453.592379</G>
+							<KG>0.453592379</KG>
+						</to>
+					</LBS>
+					<KG>
+						<to>
+							<MG>1000000</MG>
+							<G>1000</G>
+							<LBS>2.20462257811</LBS>
+						</to>
+					</KG>
+					<!-- fluids -->
+					<ML>
+						<to>
+							<L>0.001</L>
+						</to>
+					</ML>
+					<L>
+						<to>
+							<ML>1000</ML>
+						</to>
+					</L>
+					<!--  distance -->
+					<MM>
+						<to>
+							<CM>0.1</CM>
+							<IN>0.0393700787402</IN>
+							<M>0.001</M>
+						</to>
+					</MM>
+					<CM>
+						<to>
+							<MM>10</MM>
+							<IN>0.393700787402</IN>
+							<M>0.01</M>
+						</to>
+					</CM>
+					<IN>
+						<to>
+							<MM>25.4</MM>
+							<CM>2.54</CM>
+							<M>0.0254</M>
+						</to>
+					</IN>
+					<M>
+						<to>
+							<MM>1000</MM>
+							<CM>100</CM>
+							<IN>39.3700787402</IN>
+						</to>
+					</M>
+				</convert>
+			</baseprice>
+		</catalog>
+	</default>
+</config>

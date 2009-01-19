@@ -1,0 +1,14 @@
+"KG","Kilogramm (kg)"
+"LBS","Pound (lbs)"
+"G","Gramm (g)"
+"MG","Milligramm (mg)"
+"L","Liter"
+"ML","Milliliter (ml)",
+"M","Meter (m)",
+"IN","Zoll"
+"CM","Zentimeter (cm)"
+"MM","Millimeter (mm)"
+"BasePrice Error: the product unit amount must be greater the zero","BasePrice Fehler: die Menge der Produkteinheit muss gößer Null sein"
+"BasePrice Error: conversion rate not found for %s to %s","BasePrice Fehler: Umrechnungsfaktor nicht gefunden für %s nach %s"
+"BasePrice Error: reference unit not set","BasePrice Fehler: die Referenz Einheit ist nicht gesetzt"
+"BasePrice Error: reference amount not set","BasePrice Fehler: die Referenz Menge ist nicht gesetzt"
