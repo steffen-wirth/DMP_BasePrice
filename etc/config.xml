@@ -18,9 +18,7 @@
 				<class>DerModPro_BasePrice_Helper</class>
 			</baseprice>
 		</helpers>
-	</global>
-
-	<adminhtml>
+		
         <translate>
             <modules>
                 <DerModPro_BasePrice>
@@ -30,7 +28,7 @@
                 </DerModPro_BasePrice>
             </modules>
         </translate>
-	</adminhtml>
+	</global>
 	
     <frontend>
         <layout>
@@ -48,9 +46,9 @@
 				<disable_ext>0</disable_ext>
 				<frontend_label>Base Price</frontend_label>
 				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>
-				<default_product_unit>ML</default_product_unit>
-				<default_reference_unit>L</default_reference_unit>
-				<default_reference_amount>1</default_reference_amount>
+				<default_base_price_unit>ML</default_base_price_unit>
+				<default_base_price_base_unit>L</default_base_price_base_unit>
+				<default_base_price_base_amount>1</default_base_price_base_amount>
 				<!-- conversion tables -->
 				<convert>
 					<!-- weight -->

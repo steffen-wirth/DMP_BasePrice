@@ -12,3 +12,5 @@
 "BasePrice Error: conversion rate not found for %s to %s","BasePrice Error: conversion rate not found for %s to %s"
 "BasePrice Error: reference unit not set","BasePrice Error: reference unit not set"
 "BasePrice Error: reference amount not set","BasePrice Error: reference amount not set"
+"BasePrice Extension","BasePrice Extension"
+"Disable BasePrice Extension","Disable Extension"

@@ -12,3 +12,5 @@
 "BasePrice Error: conversion rate not found for %s to %s","BasePrice Fehler: Umrechnungsfaktor nicht gefunden für %s nach %s"
 "BasePrice Error: reference unit not set","BasePrice Fehler: die Referenz Einheit ist nicht gesetzt"
 "BasePrice Error: reference amount not set","BasePrice Fehler: die Referenz Menge ist nicht gesetzt"
+"BasePrice Extension","BasePrice Erweiterung"
+"Disable BasePrice Extension","Erweiterung deaktivieren"

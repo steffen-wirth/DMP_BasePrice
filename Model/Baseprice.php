@@ -87,4 +87,18 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		}
 		return $rate;
 	}
+	
+	public function toOptionArray()
+	{
+		$options = array();
+		$h = Mage::helper('baseprice');
+		foreach (explode(',', $h->getConfig('units')) as $unit)
+		{
+			$options[] = array(
+				'value' => $unit,
+				'label' => $h->__($unit)
+            );
+		}
+		return $options;
+	}
 }
