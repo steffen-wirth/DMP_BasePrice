@@ -66,6 +66,17 @@
                 </DerModPro_BasePrice>
             </modules>
         </translate>
+        <events>
+			<catalog_product_load_after>
+				<observers>
+					<hideprices>
+						<type>singleton</type>
+						<class>baseprice/observer</class>
+						<method>catalogProductLoadAfter</method>
+					</hideprices>
+				</observers>
+			</catalog_product_load_after>
+		</events>
 	</adminhtml>
 	
 	<default>
