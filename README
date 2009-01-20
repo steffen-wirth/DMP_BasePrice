@@ -1,6 +1,7 @@
 
 
 TODO:
-- create system.xml
-- create source model
-- create backend model
+- Kilogramm in english = Kilogram ...
+- check german translation of backend atributes.
+- check the default values realy are configurable
+- frontend integration
