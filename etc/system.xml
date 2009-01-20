@@ -40,26 +40,34 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </disable_ext>
-                        <default_product_groups translate="label">
-                            <label>Default: hide products from customer groups</label>
-                            <frontend_type>multiselect</frontend_type>
-                            <source_model>groupscatalog/config_source_customergroups</source_model>
-                            <backend_model>groupscatalog/config_data_customergroups</backend_model>
+                        <default_base_price_unit translate="label">
+                            <label>The default packaging unit to use on products for the base price (can be set on a product level, too)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>baseprice/config_source_baseprice_unit</source_model>
+                            <backend_model>baseprice/entity_backend_baseprice_unit</backend_model>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </default_product_groups>
-                        <default_category_groups translate="label">
-                            <label>Default: hide categories from customer groups</label>
-                            <frontend_type>multiselect</frontend_type>
-                            <source_model>groupscatalog/config_source_customergroups</source_model>
-                            <backend_model>groupscatalog/config_data_customergroups</backend_model>
+                        </default_base_price_unit>
+                        <default_base_price_base_unit translate="label">
+                            <label>The default reference unit for the base price (can be set on a product level, too)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>baseprice/config_source_baseprice_unit</source_model>
+                            <backend_model>baseprice/entity_backend_baseprice_unit</backend_model>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </default_category_groups>
+                        </default_base_price_base_unit>
+                        <default_base_price_base_amount translate="label">
+                            <label>The default reference amount for the base price (can be set on a product level, too)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_base_price_base_amount>
                     </fields>
                 </baseprice>				
             </groups>

@@ -25,37 +25,33 @@
  */
 
 /**
- * Backend model for attribute with multiple values, DerModPro_BasePrice version
+ * Backend model for baseprice amount attribute
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
  * @author     Vinai Kopp <vinai@netzarbeiter.com>
  */
-class DerModPro_BasePrice_Model_Entity_Backend_Baseprice_Unit
-	extends Mage_Eav_Model_Entity_Attribute_Backend_Array
+class DerModPro_BasePrice_Model_Entity_Backend_Baseprice_Amount
+	extends Mage_Eav_Model_Entity_Attribute_Backend_Default
 {
-	
-	/**
-	 * Prepare the unit selecton array before saving
-	 *
-	 * @param Mage_Catalog_Model_Product $object
-	 * @return nothing afaik :)
-	 */
-    public function beforeSave($object)
-    {
-        $data = $object->getData($this->getAttribute()->getAttributeCode());
-        $default = Mage::helper('baseprice')->getConfig('default_' . $this->getAttribute()->getAttributeCode());
-        
-        /**
-         * Default to using the default - don't let the user select nothing
-         */
-        if (empty($data)) {
-        	$object->setData($this->getAttribute()->getAttributeCode(), array($default));
-        }
-        
-        /**
-         * Mage_Eav_Model_Entity_Attribute_Backend_Array::beforeSave() makes a string from the array values
-         */
-        return parent::beforeSave($object);
-    }
+	public function validate($object)
+	{
+		if (parent::validate($object))
+		{
+			$attrCode = $this->getAttribute()->getAttributeCode();
+			$data = $object->getData($attrCode);
+			if ($data)
+			{
+				if (! is_numeric($ata))
+				{
+					Mage::throwException(Mage::helper('baseprice')->__('The Baseprice amount must be a numeric value'));
+				}
+				if ($data < 0)
+				{
+					Mage::throwException(Mage::helper('baseprice')->__('The Baseprice amount must greater then zero'));
+				}
+			}
+		}
+		return true;
+	}
 }

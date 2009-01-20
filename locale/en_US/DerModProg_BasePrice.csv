@@ -14,3 +14,8 @@
 "BasePrice Error: reference amount not set","BasePrice Error: reference amount not set"
 "BasePrice Extension","BasePrice Extension"
 "Disable BasePrice Extension","Disable Extension"
+"The default packaging unit to use on products for the base price (can be set on a product level, too)","The default packaging unit to use on products for the base price (can be set on a product level, too)"
+The default reference unit for the base price (can be set on a product level, too)","The default reference unit for the base price (can be set on a product level, too)"
+"The default reference amount for the base price (can be set on a product level, too)","The default reference amount for the base price (can be set on a product level, too)"
+"The Baseprice amount must be a numeric value","The Baseprice amount must be a numeric value"
+"The Baseprice amount must greater then zero,"The Baseprice amount must greater then zero"

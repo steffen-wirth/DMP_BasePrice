@@ -78,7 +78,7 @@ $this->addAttribute('catalog_product', 'base_price_base_unit', array(
 	'backend'         => 'baseprice/entity_backend_baseprice_unit',
 	'global'          => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
 	'required'        => false,
-	'default'         => '',
+	'default'         => '0',
 	'user_defined'    => 0,
 	'apply_to'        => 'simple,bundle,configurable',
 	//'is_configurable' => true

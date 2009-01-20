@@ -51,12 +51,12 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 	
 	public function getReferenceAmount()
 	{
-		$unit = $this->getData('reference_amount');
-		if (! isset($unit) || ! $unit)
+		$amount = $this->getData('reference_amount');
+		if (! isset($amount) || ! $amount)
 		{
-			Mage::throwException(Mage::helper('baseprice')->__('BasePrice Error: reference amount not set'));
+			$amount = Mage::helper('baseprice')->getConfig('default_base_price_base_amount');
 		}
-		return $unit;
+		return $amount;
 	}
 	
 	public function getBasePrice($productAmount, $productUnit, $productPrice)
