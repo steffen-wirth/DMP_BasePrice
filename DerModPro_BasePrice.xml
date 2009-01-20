@@ -2,12 +2,12 @@
 
 <config>
 	<modules>
-		<DerModPro_HidePrices>
+		<DerModPro_BasePrice>
 			<active>true</active>
 			<codePool>community</codePool>
 			<depends>
 				<Mage_Catalog />
 			</depends>
-		</DerModPro_HidePrices>
+		</DerModPro_BasePrice>
 	</modules>
 </config>

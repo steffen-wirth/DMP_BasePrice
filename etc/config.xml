@@ -18,16 +18,23 @@
 				<class>DerModPro_BasePrice_Helper</class>
 			</baseprice>
 		</helpers>
-		
-        <translate>
-            <modules>
-                <DerModPro_BasePrice>
-                     <files>
-                          <default>DerModPro_BasePrice.csv</default>
-                     </files>
-                </DerModPro_BasePrice>
-            </modules>
-        </translate>
+		<resources>
+			<baseprice_setup>
+				<setup>
+					<module>DerModPro_BasePrice</module>
+					<class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+				<connection>
+					<use>default_setup</use>
+				</connection>
+			</baseprice_setup>
+			<baseprice_write>
+				<connection><use>default_write</use></connection>
+			</baseprice_write>
+			<baseprice_read>
+				<connection><use>default_read</use></connection>
+			</baseprice_read>
+		</resources>
 	</global>
 	
     <frontend>
@@ -38,7 +45,28 @@
                 </baseprice>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <DerModPro_BasePrice>
+                     <files>
+                          <default>DerModPro_BasePrice.csv</default>
+                     </files>
+                </DerModPro_BasePrice>
+            </modules>
+        </translate>
     </frontend>
+    
+    <adminhtml>
+        <translate>
+            <modules>
+                <DerModPro_BasePrice>
+                     <files>
+                          <default>DerModPro_BasePrice.csv</default>
+                     </files>
+                </DerModPro_BasePrice>
+            </modules>
+        </translate>
+	</adminhtml>
 	
 	<default>
 		<catalog>
