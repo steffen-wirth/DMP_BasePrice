@@ -24,14 +24,29 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-
-class DerModPro_BasePrice_Block_Product extends Mage_Catalog_Block_Product
+/**
+ * Simple Product View block
+ *
+ * @category   DerModPro
+ * @package    DerModPro_BasePrice
+ * @author     Vinai Kopp <vinai@der-modulprogrammierer.de>
+ */
+class DerModPro_BasePrice_Block_Catalog_Product_View_Type_Simple
+	extends Mage_Catalog_Block_Product_View_Type_Simple
 {
-	public function getPriceHtml($product)
-	{
-		$html = parent::getPriceHtml($product);
-		$this->setTemplate('baseprice/baseprice.phtml');
-		$html .= $this->toHtml();
-		return $html . 'bbb';
-	}
+	/**
+     * Returns product price block html
+     *
+     * @param Mage_Catalog_Model_Product $product
+     * @param boolean $displayMinimalPrice
+     */
+    public function getPriceHtml($product, $displayMinimalPrice = false, $idSuffix='')
+    {
+    	$html = parent::getPriceHtml($product, $displayMinimalPrice, $idSuffix);
+		$container = new Varien_Object();
+		$container->setHtml($html);
+		Mage::dispatchEvent('block_catalog_product_get_price_html', array('block' => $this, 'container' => $container));
+		$html = $container->getHtml();
+		return $html;
+    }
 }

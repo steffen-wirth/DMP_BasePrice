@@ -28,9 +28,19 @@
  */
 class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 {
-	public function getBasePriceLabel()
+	public function getBasePriceLabel($product)
 	{
-		return $this->getConfig('frontend_label');
+		if (! ($productAmount = $product->getBasePriceAmount())) return '';
+		
+		$productUnit = $product->getBasePriceUnit();
+		$productPrice = $product->getPrice();
+		$referenceAmount = $product->getBasePriceBaseAmount();
+		$referenceUnit = $product->getBasePriceBaseUnit();
+		$label = $this->getConfig('frontend_label');
+		$basePriceModel = Mage::getModel('baseprice/baseprice', array('reference_unit' => $referenceUnit, 'reference_amount' => $referenceAmount));
+		$basePrice = $basePriceModel->getBasePrice($productAmount, $productUnit, $productPrice);
+		$label = sprintf($label, Mage::helper('core')->currency($basePrice), $referenceAmount, $referenceUnit);
+		return $label;
 	}
 	
 	/**

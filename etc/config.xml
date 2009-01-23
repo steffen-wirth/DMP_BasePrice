@@ -16,9 +16,17 @@
 		<blocks>
 			<catalog>
 				<rewrite>
-					<product>DerModPro_BasePrice_Block_Product</product>
+					<product_view>DerModPro_BasePrice_Block_Catalog_Product_View</product_view>
+					<product_view_type_configurable>DerModPro_BasePrice_Block_Catalog_Product_View_Type_Configurable</product_view_type_configurable>
+					<product_view_type_simple>DerModPro_BasePrice_Block_Catalog_Product_View_Type_Simple</product_view_type_simple>
+					<product_view_type_virtual>DerModPro_BasePrice_Block_Catalog_Product_View_Type_Virtual</product_view_type_virtual>
 				</rewrite>
 			</catalog>
+			<bundle>
+				<rewrite>
+					<catalog_product_view_type_bundle>DerModPro_BasePrice_Block_Bundle_Catalog_Product_View_Type_Bundle</catalog_product_view_type_bundle>
+				</rewrite>
+			</bundle>
 		</blocks>
 		<helpers>
 			<baseprice>
@@ -61,6 +69,17 @@
                 </DerModPro_BasePrice>
             </modules>
         </translate>
+        <events>
+        	<block_catalog_product_get_price_html>
+				<observers>
+					<baseprice>
+						<type>singleton</type>
+						<class>baseprice/observer</class>
+						<method>blockCatalogProductGetPriceHtml</method>
+					</baseprice>
+				</observers>
+        	</block_catalog_product_get_price_html>
+        </events>
     </frontend>
     
     <adminhtml>
@@ -74,6 +93,8 @@
             </modules>
         </translate>
         <events>
+        	<block_catalog_product_get_price_html>
+        	</block_catalog_product_get_price_html>
 			<catalog_product_load_after>
 				<observers>
 					<baseprice>
@@ -99,7 +120,7 @@
 		<catalog>
 			<baseprice>
 				<disable_ext>0</disable_ext>
-				<frontend_label>equates to %s per %s</frontend_label>
+				<frontend_label>equates to %s per %s %s</frontend_label>
 				<default_base_price_unit>ML</default_base_price_unit>
 				<default_base_price_base_unit>L</default_base_price_base_unit>
 				<default_base_price_base_amount>1</default_base_price_base_amount>
