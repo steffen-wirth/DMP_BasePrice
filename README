@@ -1,7 +1,8 @@
 
 
 TODO:
+- baseprice backend model for unit in system.xml?
 - Kilogramm in english = Kilogram ...
-- check german translation of backend atributes.
-- check the default values realy are configurable
+- check german translation of backend attributes.
+- check the default values really are configurable
 - frontend integration

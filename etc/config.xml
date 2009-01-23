@@ -13,6 +13,13 @@
 				<class>DerModPro_BasePrice_Model</class>
 			</baseprice>
 		</models>
+		<blocks>
+			<catalog>
+				<rewrite>
+					<product>DerModPro_BasePrice_Block_Product</product>
+				</rewrite>
+			</catalog>
+		</blocks>
 		<helpers>
 			<baseprice>
 				<class>DerModPro_BasePrice_Helper</class>
@@ -69,13 +76,22 @@
         <events>
 			<catalog_product_load_after>
 				<observers>
-					<hideprices>
+					<baseprice>
 						<type>singleton</type>
 						<class>baseprice/observer</class>
 						<method>catalogProductLoadAfter</method>
-					</hideprices>
+					</baseprice>
 				</observers>
 			</catalog_product_load_after>
+			<catalog_product_save_before>
+				<observers>
+					<baseprice>
+						<type>singleton</type>
+						<class>baseprice/observer</class>
+						<method>catalogProductSaveBefore</method>
+					</baseprice>
+				</observers>
+			</catalog_product_save_before>
 		</events>
 	</adminhtml>
 	
@@ -83,11 +99,11 @@
 		<catalog>
 			<baseprice>
 				<disable_ext>0</disable_ext>
-				<frontend_label>Base Price</frontend_label>
-				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>
+				<frontend_label>equates to %s per %s</frontend_label>
 				<default_base_price_unit>ML</default_base_price_unit>
 				<default_base_price_base_unit>L</default_base_price_base_unit>
 				<default_base_price_base_amount>1</default_base_price_base_amount>
+				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>
 				<!-- conversion tables -->
 				<convert>
 					<!-- weight -->

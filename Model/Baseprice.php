@@ -67,7 +67,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 			{
 				Mage::throwException(Mage::helper('baseprice')->__('BasePrice Error: the product unit amount must be greater the zero'));
 			}
-			$rate = $this->_getConversionRate($productUnit, $this->getReferenceUnit());
+			$rate = $this->getConversionRate($productUnit, $this->getReferenceUnit());
 			$result = ($productPrice / $productAmount) * $rate * $this->getReferenceAmount();
 			return $result;
 		}
@@ -77,7 +77,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		}
 	}
 	
-	protected function _getConversionRate($fromUnit, $toUnit)
+	public function getConversionRate($fromUnit, $toUnit)
 	{
 		$h = Mage::helper('baseprice');
 		$rate = $h->getConfig(sprintf('convert/%s/to/%s', strtoupper($fromUnit), strtoupper($toUnit)));

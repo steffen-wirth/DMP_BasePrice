@@ -46,5 +46,29 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 			}
 		}
 	}
+	
+	/**
+	 * Check the selected unit types are compatible
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function catalogProductSaveBefore($observer)
+	{
+		if (! Mage::helper('baseprice')->moduleActive()) return;
+		$product = $observer->getProduct();
+		if ($product->getBasePriceAmount())
+		{
+			$fromUnit = $product->getBasePriceUnit();
+			$toUnit = $product->getBasePriceBaseUnit();
+			// will throw Exception if no conversion rate is defined
+			try {
+				$rate = Mage::getSingleton('baseprice/baseprice')->getConversionRate($fromUnit, $toUnit);
+			}
+			catch (Exception $e)
+			{
+				Mage::throwException($e->getMessage() . "<br/>\n" . Mage::helper('baseprice')->__('The product settings where not saved'));
+			}
+		}
+	}
 }
 
