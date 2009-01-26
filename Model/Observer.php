@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Magento
  *
@@ -18,8 +17,9 @@
  * @copyright  Copyright (c) 2009 Vinai Kopp http://netzarbeiter.com/
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
+
 /**
- * Observer for the hideprices extension.
+ * Observer for the baseprice extension.
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
@@ -27,6 +27,26 @@
  */
 class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 {
+	/**
+	 * Append the baseprice html if necessary (frontend) 
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function blockCatalogProductGetPriceHtml($observer)
+	{
+		if (
+			! Mage::helper('baseprice')->moduleActive() ||
+			Mage::helper('baseprice')->inAdmin() ||
+			! Mage::helper('baseprice')->getConfig('auto_append_base_price')
+		) return;
+		$block = $observer->getBlock();
+		$product = $block->getProduct();
+		$container = $observer->getContainer();
+		$block->setTemplate('baseprice/baseprice.phtml');
+		$html = $container->getHtml() . $block->toHtml();
+		$container->setHtml($html);
+	}
+	
 	/**
 	 * Set the default value on a product in the admin interface
 	 *
@@ -68,27 +88,6 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 			{
 				Mage::throwException($e->getMessage() . "<br/>\n" . Mage::helper('baseprice')->__('The product settings where not saved'));
 			}
-		}
-	}
-	
-	/**
-	 * Append the baseprice html in necessary (frontend) 
-	 *
-	 * @param Varien_Event_Observer $observer
-	 */
-	public function blockCatalogProductGetPriceHtml($observer)
-	{
-		Mage::helper('baseprice')->log(__CLASS__ . '::' . __FUNCTION__ . '() called');
-		if (! Mage::helper('baseprice')->moduleActive() || Mage::helper('baseprice')->inAdmin()) return;
-		$block = $observer->getBlock();
-		$product = $block->getProduct();
-		if ($product->getBasePriceAmount())
-		{
-			$container = $observer->getContainer();
-			$block->setTemplate('baseprice/baseprice.phtml')
-				->setBasePriceLabel(Mage::helper('baseprice')->getBasePriceLabel($product));
-			$html = $container->getHtml() . $block->toHtml();
-			$container->setHtml($html);
 		}
 	}
 }

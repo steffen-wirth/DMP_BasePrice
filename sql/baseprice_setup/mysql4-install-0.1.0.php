@@ -36,7 +36,7 @@ $this->addAttribute('catalog_product', 'base_price_amount', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple,bundle,configurable',
+	'apply_to'        => 'simple',
 	//'is_configurable' => true
 ));
 
@@ -52,7 +52,7 @@ $this->addAttribute('catalog_product', 'base_price_unit', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple,bundle,configurable',
+	'apply_to'        => 'simple',
 	//'is_configurable' => true
 ));
 
@@ -68,7 +68,7 @@ $this->addAttribute('catalog_product', 'base_price_base_amount', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple,bundle,configurable',
+	'apply_to'        => 'simple',
 	//'is_configurable' => true
 ));
 
@@ -84,7 +84,7 @@ $this->addAttribute('catalog_product', 'base_price_base_unit', array(
 	'required'        => false,
 	'default'         => '0',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple,bundle,configurable',
+	'apply_to'        => 'simple',
 	//'is_configurable' => true
 ));
 
