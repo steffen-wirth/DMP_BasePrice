@@ -34,8 +34,6 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		
 		$productUnit = $product->getBasePriceUnit();
 		$productPrice = $product->getFinalPrice();
-		Mage::helper('baseprice')->log(__CLASS__ . '::' . __FUNCTION__ . '() called');
-		Mage::helper('baseprice')->log($productPrice);
 		if (! $productPrice) return '';
 		
 		$productPrice = Mage::helper('tax')->getPrice($product, $productPrice, $this->getConfig('base_price_incl_tax'));
@@ -47,7 +45,7 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$label = $this->__($this->getConfig('frontend_label'));
 		$label = str_replace('{{baseprice}}', Mage::helper('core')->currency($basePrice), $label);
 		$label = str_replace('{{reference_amount}}', $referenceAmount, $label);
-		$label = str_replace('{{reference_unit}}', $referenceUnit, $label);
+		$label = str_replace('{{reference_unit}}', $this->__($referenceUnit), $label);
 		return $label;
 	}
 	
