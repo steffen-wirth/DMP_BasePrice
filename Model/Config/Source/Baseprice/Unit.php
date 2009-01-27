@@ -14,7 +14,7 @@
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
- * @copyright  Copyright (c) 2009 Vinai Kopp http://netzarbeiter.com/
+ * @copyright  Copyright (c) 2009 Der Modulprogrammierer - Vinai Kopp, Rico Neitzel GbR http://der-modulprogrammierer.de/
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -23,7 +23,7 @@
  * 
  * @category   DerModPro
  * @package    DerModPro_BasePrice
- * @author     Vinai Kopp <vinai@netzarbeiter.com>
+ * @author     Vinai Kopp <vinai@der-modulprogrammierer.de>
  */
 class DerModPro_BasePrice_Model_Config_Source_Baseprice_Unit
 	extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
