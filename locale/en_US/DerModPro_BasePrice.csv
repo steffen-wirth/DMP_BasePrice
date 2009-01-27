@@ -26,3 +26,4 @@
 "The product settings where not saved","The product settings where not saved"
 "Frontend Label (what the customer sees)","Frontend Label (what the customer sees)"
 "Calculate the base price based on the product price including tax","Calculate the base price based on the product price including tax"
+"Automatically append the baseprice block to the price on the product view","Automatically append the baseprice block to the price on the product view"
