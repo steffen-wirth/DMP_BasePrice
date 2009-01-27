@@ -42,7 +42,7 @@ class DerModPro_BasePrice_Model_Entity_Backend_Baseprice_Amount
 			$data = $object->getData($attrCode);
 			if ($data)
 			{
-				if (! is_numeric($ata))
+				if (! is_numeric($data))
 				{
 					Mage::throwException(Mage::helper('baseprice')->__('The Baseprice amount must be a numeric value'));
 				}

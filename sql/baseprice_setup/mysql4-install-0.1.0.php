@@ -25,7 +25,7 @@
 $this->startSetup();
 
 $this->addAttribute('catalog_product', 'base_price_amount', array(
-	'group'           => 'General',
+	'group'           => 'Prices',
 	'type'            => 'varchar',
 	'label'           => 'Baseprice amount in product',
 	'input'           => 'text',
@@ -41,7 +41,7 @@ $this->addAttribute('catalog_product', 'base_price_amount', array(
 ));
 
 $this->addAttribute('catalog_product', 'base_price_unit', array(
-	'group'           => 'General',
+	'group'           => 'Prices',
 	'type'            => 'varchar',
 	'label'           => 'Baseprice amount unit of product',
 	'input'           => 'select',
@@ -57,7 +57,7 @@ $this->addAttribute('catalog_product', 'base_price_unit', array(
 ));
 
 $this->addAttribute('catalog_product', 'base_price_base_amount', array(
-	'group'           => 'General',
+	'group'           => 'Prices',
 	'type'            => 'varchar',
 	'label'           => 'Baseprice reference amount',
 	'input'           => 'text',
@@ -73,7 +73,7 @@ $this->addAttribute('catalog_product', 'base_price_base_amount', array(
 ));
 
 $this->addAttribute('catalog_product', 'base_price_base_unit', array(
-	'group'           => 'General',
+	'group'           => 'Prices',
 	'type'            => 'varchar',
 	'label'           => 'Baseprice reference unit',
 	'input'           => 'select',
