@@ -23,6 +23,8 @@
  */
 $this->startSetup();
 
+$types = Mage::helper('baseprice')->isBasePriceProInstalledAndActive() ? 'simple,bundle,configurable' : 'simple';
+
 $this->addAttribute('catalog_product', 'base_price_amount', array(
 	'group'           => 'Prices',
 	'type'            => 'varchar',
@@ -35,7 +37,7 @@ $this->addAttribute('catalog_product', 'base_price_amount', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple',
+	'apply_to'        => $types,
 	//'is_configurable' => true
 ));
 
@@ -51,7 +53,7 @@ $this->addAttribute('catalog_product', 'base_price_unit', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple',
+	'apply_to'        => $types,
 	//'is_configurable' => true
 ));
 
@@ -67,7 +69,7 @@ $this->addAttribute('catalog_product', 'base_price_base_amount', array(
 	'required'        => false,
 	'default'         => '',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple',
+	'apply_to'        => $types,
 	//'is_configurable' => true
 ));
 
@@ -83,7 +85,7 @@ $this->addAttribute('catalog_product', 'base_price_base_unit', array(
 	'required'        => false,
 	'default'         => '0',
 	'user_defined'    => 0,
-	'apply_to'        => 'simple',
+	'apply_to'        => $types,
 	//'is_configurable' => true
 ));
 

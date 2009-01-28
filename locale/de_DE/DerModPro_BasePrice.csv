@@ -27,3 +27,4 @@
 "Frontend Label (what the customer sees)","Frontend Label (was der Kunde sieht)"
 "Calculate the base price based on the product price including tax","Bestimme den Basispreis aufgrund des Produktpreises inklusive Steuern"
 "Automatically append the baseprice block to the price on the product view","Zeige die Basispreise automatisch auf der Produkt Detail Seiten nach den Produkt Preisen an"
+"Please install the BasePrice module in order to use the BasePricePro extension!","Bitte installieren Sie die BasePrice Erweiterung um das BasePricePro Modul zu nutzen!"

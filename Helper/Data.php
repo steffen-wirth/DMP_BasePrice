@@ -75,6 +75,8 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 
 	/**
 	 * Check if the extension has been disabled in the system configuration
+	 * 
+	 * @return boolean
 	 */
 	public function moduleActive()
 	{
@@ -92,5 +94,19 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$path = 'catalog/baseprice/' . $key;
 		return Mage::getStoreConfig($path, Mage::app()->getStore());
 	}
+	
+	/**
+	 * Check if the BasePricePro extension is installed and active
+	 *
+	 * @return boolean
+	 */
+    public function isBasePriceProInstalledAndActive()
+    {
+    	if ($node = Mage::getConfig()->getNode('modules/DerModPro_BasePricePro'))
+    	{
+    		return strval($node->active) == 'true';
+    	}
+    	return false;
+    }
 }
 
