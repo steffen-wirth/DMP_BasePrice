@@ -1,4 +1,75 @@
+/**
+ * Der Modulprogrammierer - Vinai Kopp, Rico Neitzel GbR
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   DerModPro
+ * @package    DerModPro_BasePrice
+ * @copyright  Copyright (c) 2009 Der Modulprogrammierer - Vinai Kopp, Rico Neitzel GbR http://der-modulprogrammierer.de/
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+ABOUT
+This extension enables you to display the base price for products.  E.g. if you sell
+different quantities of oil, you can enter the amount each bottle contains (like 250ml)
+and a reference unit (like liter), and the price per liter is calculated and displayed.
+
+What can be configured:
+- Product Unit:
+   The packaging unit of your products: Milliliter, Gram, Centimeter, Milligram,...
+
+- Product Amount:
+   The amount of the packaging unit (e.g. 100g)
+
+- Reference Unit:
+   The unit the price should be calculated for. It should match the type of unit chosen
+   for the product (Milliliter to Liter, Milligram to Gram or Kilogram, Centimeter to Meter,...)
+
+- Reference Amount:
+   Probably you will want to have 1 (one) as the reference amount. But if you want to have a
+   different amount, you can choose one here.
 
 
-TODO:
-- check german translation of backend attributes.
+You can specify defaults on a global, website or store view scope for all products
+in the admin interface under System / Catalog / Hide Prices
+
+You can override those default settings in the Product Management page at
+Catalog / Manage Products / (Choose a Product) / Prices
+
+In the configuration you may also disable the extension on a store view scope.
+
+
+NOTICE
+This extension provides base prices for simple products. We provide a commercial
+Extension that extends the BasePrice Module to add support for custom options,
+configurable products and bundled products. You can purchase that module on the
+http://der-modulprogrammierer.de website.
+
+
+UNINSTALL
+If you ever uninstall the extension (I don't hope so ;)) your site will be broken, because
+Magento doesn't support a mechanism to remove attributes with an extension, and this
+extension uses source models.
+To fix the Error, you have to execute the following SQL:
+
+   DELETE FROM `eav_attribute` where attribute_code IN ('base_price_amount','base_price_unit','base_price_base_amount','base_price_base_unit');   
+   DELETE FROM `core_resource` where code = 'baseprice_setup';
+
+Afterwards don't forget to clear the cache.
+
+
+CHANGELOG
+0.1.0 Initial Release
+
+
+BUGS
+If you have ideas for improvements or find bugs, please send them to vinai@der-modulprogrammierer.de,
+with DerModPro_BasePrice as part of the subject.

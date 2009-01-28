@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Magento
+ * Der Modulprogrammierer - Vinai Kopp, Rico Neitzel GbR
  *
  * NOTICE OF LICENSE
  *
