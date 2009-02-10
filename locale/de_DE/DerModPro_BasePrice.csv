@@ -12,7 +12,7 @@
 "Conversion rate not found for %s to %s","Umrechnungsfaktor nicht gefunden für %s nach %s!"
 "Reference unit not set","Die Referenz Einheit ist nicht gesetzt!"
 "Reference amount not set","Die Referenz Menge ist nicht gesetzt!"
-"BasePrice Extension","BasePrice Erweiterung"
+"Baseprice Extension","Basispreis Erweiterung"
 "Disable BasePrice Extension","Erweiterung deaktivieren"
 "The default packaging unit to use on products for the base price (can be set on a product level, too)","Die Standard-Packungseinheit für die Grundpreisberechnung (kann auch für jedes Produkt eingestellt werden)"
 "The default reference unit for the base price (can be set on a product level, too)","Die Standard-Referenzeinheit für die Grundpreisberechnung Berechnung (kann auch für jedes Produkt eingestellt werden)"
