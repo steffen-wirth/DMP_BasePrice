@@ -28,7 +28,7 @@ $types = Mage::helper('baseprice')->isBasePriceProInstalledAndActive() ? 'simple
 $this->addAttribute('catalog_product', 'base_price_amount', array(
 	'group'           => 'Prices',
 	'type'            => 'varchar',
-	'label'           => 'Baseprice amount in product',
+	'label'           => 'Amount in product',
 	'input'           => 'text',
 	//'source'          => 'baseprice/config_source_baseprice_product',
 	'backend'         => 'baseprice/entity_backend_baseprice_amount',
@@ -44,7 +44,7 @@ $this->addAttribute('catalog_product', 'base_price_amount', array(
 $this->addAttribute('catalog_product', 'base_price_unit', array(
 	'group'           => 'Prices',
 	'type'            => 'varchar',
-	'label'           => 'Baseprice amount unit of product',
+	'label'           => 'Unit of product',
 	'input'           => 'select',
 	'source'          => 'baseprice/config_source_baseprice_unit',
 	'backend'         => 'baseprice/entity_backend_baseprice_unit',
@@ -60,7 +60,7 @@ $this->addAttribute('catalog_product', 'base_price_unit', array(
 $this->addAttribute('catalog_product', 'base_price_base_amount', array(
 	'group'           => 'Prices',
 	'type'            => 'varchar',
-	'label'           => 'Baseprice reference amount',
+	'label'           => 'Reference amount',
 	'input'           => 'text',
 	//'source'          => 'baseprice/config_source_baseprice_unit',
 	'backend'         => 'baseprice/entity_backend_baseprice_amount',
@@ -76,7 +76,7 @@ $this->addAttribute('catalog_product', 'base_price_base_amount', array(
 $this->addAttribute('catalog_product', 'base_price_base_unit', array(
 	'group'           => 'Prices',
 	'type'            => 'varchar',
-	'label'           => 'Baseprice reference unit',
+	'label'           => 'Reference unit',
 	'input'           => 'select',
 	'source'          => 'baseprice/config_source_baseprice_unit',
 	'backend'         => 'baseprice/entity_backend_baseprice_unit',

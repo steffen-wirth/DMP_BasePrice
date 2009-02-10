@@ -38,7 +38,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		$unit = $this->getData('reference_unit');
 		if (! isset($unit) || ! $unit)
 		{
-			Mage::throwException(Mage::helper('baseprice')->__('BasePrice Error: reference unit not set'));
+			Mage::throwException(Mage::helper('baseprice')->__('Reference unit not set'));
 		}
 		return $unit;
 	}
@@ -59,7 +59,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		{
 			if ($productAmount <= 0)
 			{
-				Mage::throwException(Mage::helper('baseprice')->__('BasePrice Error: the product unit amount must be greater the zero'));
+				Mage::throwException(Mage::helper('baseprice')->__('The product unit amount must be greater the zero'));
 			}
 			$rate = $this->getConversionRate($productUnit, $this->getReferenceUnit());
 			$result = $productPrice / $productAmount / $rate * $this->getReferenceAmount();
@@ -78,7 +78,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		$rate = $h->getConfig(sprintf('convert/%s/to/%s', strtoupper($fromUnit), strtoupper($toUnit)));
 		if (! isset($rate) || ! $rate)
 		{
-			Mage::throwException($h->__('BasePrice Error: conversion rate not found for %s to %s', $h->__($fromUnit), $h->__($toUnit)));
+			Mage::throwException($h->__('Conversion rate not found for %s to %s', $h->__($fromUnit), $h->__($toUnit)));
 		}
 		return $rate;
 	}
