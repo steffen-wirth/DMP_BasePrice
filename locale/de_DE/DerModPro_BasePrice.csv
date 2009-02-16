@@ -20,7 +20,7 @@
 "The Baseprice amount must be a numeric value","Die Grundpreis Menge muss ein numerischer Wert sein"
 "The Baseprice amount must greater then zero","Die Grundpreis Menge muss größer Null sein"
 "Amount in product","Produktmenge"
-"Leave empty for hiding display", "(leerlassen für keine Grundpreisanzeige)"
+"Leave empty to hide the display", "(leerlassen für keine Grundpreisanzeige)"
 "Unit of product","Produkteinheit"
 "Reference amount","Referenzmenge"
 "Reference unit","Referenzeinheit"

@@ -38,6 +38,7 @@ $this->addAttribute('catalog_product', 'base_price_amount', array(
 	'default'         => '',
 	'user_defined'    => 0,
 	'apply_to'        => $types,
+	'note'            => 'Leave empty to hide the display',
 	//'is_configurable' => true
 ));
 

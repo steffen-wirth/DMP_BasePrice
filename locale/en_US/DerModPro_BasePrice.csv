@@ -20,7 +20,7 @@
 "The Baseprice amount must be a numeric value","The Baseprice amount must be a numeric value"
 "The Baseprice amount must greater then zero","The Baseprice amount must greater then zero"
 "Amount in product","Amount in product"
-"Leave empty for hiding display", "Leave empty for hiding display"
+"Leave empty to hide the display", "Leave empty to hide the display"
 "Unit of product","Unit of product"
 "Reference amount","Reference amount"
 "Reference unit","Reference unit"
