@@ -54,13 +54,16 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 	 */
 	public function catalogProductLoadAfter($observer)
 	{
+		Mage::helper('baseprice')->log(__CLASS__ . '::' . __FUNCTION__ . '() called');
 		if (! Mage::helper('baseprice')->moduleActive()) return;
 		$product = $observer->getProduct();
 		foreach (array('base_price_amount', 'base_price_unit', 'base_price_base_amount', 'base_price_base_unit') as $attributeCode)
 		{
+			Mage::helper('baseprice')->log('loading ' . $attributeCode . ' default');
 			$data = $product->getDataUsingMethod($attributeCode);
 			if (! isset($data))
 			{
+				Mage::helper('baseprice')->log('setting  ' . $attributeCode . ' default');
 				$attribute = Mage::getModel('eav/entity_attribute')->loadByCode('catalog_product', $attributeCode);
 				$product->setDataUsingMethod($attributeCode, $attribute->getFrontend()->getValue($product));
 			}

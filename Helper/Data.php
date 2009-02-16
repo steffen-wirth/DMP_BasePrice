@@ -30,14 +30,14 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 	public function getBasePriceLabel($product)
 	{
 		if (! ($productAmount = $product->getBasePriceAmount())) return '';
+		if (! ($referenceAmount = $product->getBasePriceBaseAmount())) return '';
+		if (! ($productPrice = $product->getFinalPrice())) return '';
+		if (! is_numeric($productAmount) || ! is_numeric($referenceAmount) || ! is_numeric($productPrice)) return '';
 		
 		$productUnit = $product->getBasePriceUnit();
-		$productPrice = $product->getFinalPrice();
-		if (! $productPrice) return '';
+		$referenceUnit = $product->getBasePriceBaseUnit();
 		
 		$productPrice = Mage::helper('tax')->getPrice($product, $productPrice, $this->getConfig('base_price_incl_tax'));
-		$referenceAmount = $product->getBasePriceBaseAmount();
-		$referenceUnit = $product->getBasePriceBaseUnit();
 		$basePriceModel = Mage::getModel('baseprice/baseprice', array('reference_unit' => $referenceUnit, 'reference_amount' => $referenceAmount));
 		$basePrice = $basePriceModel->getBasePrice($productAmount, $productUnit, $productPrice);
 		

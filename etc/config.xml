@@ -115,6 +115,7 @@
 				<auto_append_base_price>1</auto_append_base_price>
 				<frontend_label>equates to {{baseprice}} per {{reference_amount}} {{reference_unit}}</frontend_label>
 				<default_base_price_unit>ML</default_base_price_unit>
+				<default_base_price_amount></default_base_price_amount>
 				<default_base_price_base_unit>L</default_base_price_base_unit>
 				<default_base_price_base_amount>1</default_base_price_base_amount>
 				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>

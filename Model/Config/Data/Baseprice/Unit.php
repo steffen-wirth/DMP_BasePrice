@@ -48,4 +48,9 @@ class DerModPro_BasePrice_Model_Config_Data_Baseprice_Unit
         }
         return parent::_beforeSave();
     }
+    
+	public function getDefaultValue()
+	{
+		return Mage::helper('baseprice')->getConfig('default_base_price_base_unit');
+	}
 }

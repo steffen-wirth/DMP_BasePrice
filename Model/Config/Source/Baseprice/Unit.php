@@ -42,4 +42,9 @@ class DerModPro_BasePrice_Model_Config_Source_Baseprice_Unit
     {
     	return $this->toOptionArray();
     }
+    
+	public function getDefaultValue()
+	{
+		return Mage::helper('baseprice')->getConfig('default_base_price_base_unit');
+	}
 }

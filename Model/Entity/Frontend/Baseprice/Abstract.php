@@ -19,7 +19,7 @@
  */
 
 /**
- * Frontend model for baseprice attributes
+ * Frontend model for baseprice attribute
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice

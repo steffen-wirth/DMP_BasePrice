@@ -19,37 +19,19 @@
  */
 
 /**
- * Backend model for attribute with multiple values, DerModPro_BasePrice version
+ * Backend model for attribute, DerModPro_BasePrice version
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
  * @author     Vinai Kopp <vinai@der-modulprogrammierer.de>
  */
 class DerModPro_BasePrice_Model_Entity_Backend_Baseprice_Unit
-	extends Mage_Eav_Model_Entity_Attribute_Backend_Array
+	extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
-	
-	/**
-	 * Prepare the unit selecton array before saving
-	 *
-	 * @param Mage_Catalog_Model_Product $object
-	 * @return nothing afaik :)
-	 */
-    public function beforeSave($object)
-    {
-        $data = $object->getData($this->getAttribute()->getAttributeCode());
-        $default = Mage::helper('baseprice')->getConfig('default_' . $this->getAttribute()->getAttributeCode());
-        
-        /**
-         * Default to using the default - don't let the user select nothing
-         */
-        if (empty($data)) {
-        	$object->setData($this->getAttribute()->getAttributeCode(), array($default));
-        }
-        
-        /**
-         * Mage_Eav_Model_Entity_Attribute_Backend_Array::beforeSave() makes a string from the array values
-         */
-        return parent::beforeSave($object);
-    }
+	/*
+	public function validate($object)
+	{
+		return parent::validate($object);
+	}
+	*/
 }

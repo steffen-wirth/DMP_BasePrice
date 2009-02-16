@@ -19,34 +19,20 @@
  */
 
 /**
- * Backend model for baseprice amount attribute
+ * Attribute model, DerModPro_BasePrice abstract
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
  * @author     Vinai Kopp <vinai@der-modulprogrammierer.de>
  */
-class DerModPro_BasePrice_Model_Entity_Backend_Baseprice_Amount
-	extends Mage_Eav_Model_Entity_Attribute_Backend_Default
-	       
+abstract class DerModPro_BasePrice_Model_Entity_Resource_Eav_Attribute_Abstract
+	extends Mage_Catalog_Model_Resource_Eav_Attribute
 {
-	public function validate($object)
+	protected $_basePriceDefaultKey = '';
+	
+	public function getDefaultValue()
 	{
-		if (parent::validate($object))
-		{
-			$attrCode = $this->getAttribute()->getAttributeCode();
-			$data = $object->getData($attrCode);
-			if ($data)
-			{
-				if (! is_numeric($data))
-				{
-					Mage::throwException(Mage::helper('baseprice')->__('The Baseprice amount must be a numeric value'));
-				}
-				if ($data < 0)
-				{
-					Mage::throwException(Mage::helper('baseprice')->__('The Baseprice amount must greater then zero'));
-				}
-			}
-		}
-		return true;
+		$value = Mage::helper('baseprice')->getConfig($this->_basePriceDefaultKey);
+		return $value;
 	}
 }

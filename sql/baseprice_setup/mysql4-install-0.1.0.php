@@ -89,6 +89,17 @@ $this->addAttribute('catalog_product', 'base_price_base_unit', array(
 	//'is_configurable' => true
 ));
 
+
+/**
+ * jup, a ugly hack - but setting the attribute_model per attribute isn't supported in Mage_Eav_Model_Entity_Setup::addAttribute()
+ */
+$this->run("
+UPDATE {$this->getTable('eav_attribute')} SET `attribute_model`='baseprice/entity_resource_eav_attribute_product_amount' WHERE `attribute_code`='base_price_amount';
+UPDATE {$this->getTable('eav_attribute')} SET `attribute_model`='baseprice/entity_resource_eav_attribute_product_unit' WHERE `attribute_code`='base_price_unit';
+UPDATE {$this->getTable('eav_attribute')} SET `attribute_model`='baseprice/entity_resource_eav_attribute_reference_amount' WHERE `attribute_code`='base_price_base_amount';
+UPDATE {$this->getTable('eav_attribute')} SET `attribute_model`='baseprice/entity_resource_eav_attribute_reference_unit' WHERE `attribute_code`='base_price_base_unit';
+");
+
 $this->endSetup();
 
 
