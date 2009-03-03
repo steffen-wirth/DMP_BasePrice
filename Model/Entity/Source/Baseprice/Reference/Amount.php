@@ -19,29 +19,14 @@
  */
 
 /**
- * Simple Product View block
+ * Source model for baseprice attribute reference amount
  *
  * @category   DerModPro
  * @package    DerModPro_BasePrice
  * @author     Vinai Kopp <vinai@der-modulprogrammierer.de>
  */
-class DerModPro_BasePrice_Block_Catalog_Product_View_Type_Simple
-	extends Mage_Catalog_Block_Product_View_Type_Simple
+class DerModPro_BasePrice_Model_Entity_Source_Baseprice_Reference_Amount
+	extends DerModPro_BasePrice_Model_Entity_Source_Baseprice_Abstract
 {
-	
-	/**
-     * Returns product price block html
-     *
-     * @param Mage_Catalog_Model_Product $product
-     * @param boolean $displayMinimalPrice
-     */
-    public function getPriceHtml($product, $displayMinimalPrice = false, $idSuffix='')
-    {
-    	$html = parent::getPriceHtml($product, $displayMinimalPrice, $idSuffix);
-		$container = new Varien_Object();
-		$container->setHtml($html);
-		Mage::dispatchEvent('block_catalog_product_get_price_html', array('block' => $this, 'container' => $container));
-		$html = $container->getHtml();
-		return $html;
-    }
+	protected $_basePriceDefaultKey = 'default_base_price_base_amount';
 }
