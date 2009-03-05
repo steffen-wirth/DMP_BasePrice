@@ -41,13 +41,23 @@
                             <show_in_store>1</show_in_store>
                         </disable_ext>
                         <frontend_label translate="label">
-                            <label>Frontend Label (what the customer sees)</label>
+                            <label>Frontend Label</label>
+                            <comment>What the customer sees</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </frontend_label>
+                        <short_label translate="label">
+                            <label>Short frontend Label</label>
+                            <comment>What the customer sees in the product list view (if configured)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </short_label>
                         <base_price_incl_tax translate="label">
                             <label>Calculate the base price based on the product price including tax</label>
                             <frontend_type>select</frontend_type>

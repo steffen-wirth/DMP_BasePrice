@@ -27,7 +27,7 @@
  */
 class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 {
-	public function getBasePriceLabel($product)
+	public function getBasePriceLabel($product, $shortLabel = false)
 	{
 		if (! ($productAmount = $product->getBasePriceAmount())) return '';
 		if (! ($referenceAmount = $product->getBasePriceBaseAmount())) return '';
@@ -41,10 +41,12 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$basePriceModel = Mage::getModel('baseprice/baseprice', array('reference_unit' => $referenceUnit, 'reference_amount' => $referenceAmount));
 		$basePrice = $basePriceModel->getBasePrice($productAmount, $productUnit, $productPrice);
 		
-		$label = $this->__($this->getConfig('frontend_label'));
+		$configKey = $shortLabel ? 'short_label' : 'frontend_label';
+		$label = $this->__($this->getConfig($configKey));
 		$label = str_replace('{{baseprice}}', Mage::helper('core')->currency($basePrice), $label);
 		$label = str_replace('{{reference_amount}}', $referenceAmount, $label);
 		$label = str_replace('{{reference_unit}}', $this->__($referenceUnit), $label);
+		$label = str_replace('{{reference_unit_short}}', $this->__($referenceUnit . ' short'), $label);
 		return $label;
 	}
 	

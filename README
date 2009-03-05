@@ -46,12 +46,22 @@ Catalog / Manage Products / (Choose a Product) / Prices
 
 In the configuration you may also disable the extension on a store view scope.
 
-
 NOTICE
 This extension provides base prices for simple products. We provide a commercial
 Extension that extends the BasePrice Module to add support for custom options,
 configurable products and bundled products. You can purchase that module on the
 http://der-modulprogrammierer.de website.
+
+
+LIST VIEW
+To display baseprices in the list view, you can either add the following code to your
+catalog/product/list.phtml template, or enable the commented out XML block in
+app/design/frontend/default/default/layout/baseprice.xml
+This is the code that displays the short baseprice label for a product:
+
+				<?php if($baseprice = Mage::helper('baseprice')->getBasePriceLabel($_product, true)): ?>
+				<div class="baseprice">(<?php echo $baseprice ?>)</div>
+				<?php endif; ?>
 
 
 UNINSTALL
@@ -67,8 +77,10 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
-0.1.2 Initial Release
+0.1.5 Add missing translation namespaces
+0.1.4 Add list view support (requires template editing to enable)
 0.1.3 Set translation namespace correctly on blocks
+0.1.2 Initial Release
 
 
 BUGS

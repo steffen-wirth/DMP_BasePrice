@@ -29,8 +29,6 @@ class DerModPro_BasePrice_Block_Catalog_Product_View extends Mage_Catalog_Block_
 {
 	/**
 	 * Set the module translaton namespace
-	 * 
-	 * @return unknown_type
 	 */
 	public function _construct()
 	{

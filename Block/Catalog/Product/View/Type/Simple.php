@@ -28,6 +28,13 @@
 class DerModPro_BasePrice_Block_Catalog_Product_View_Type_Simple
 	extends Mage_Catalog_Block_Product_View_Type_Simple
 {
+	/**
+	 * Set the module translaton namespace
+	 */
+	public function _construct()
+	{
+		$this->setData('module_name', 'Mage_Catalog');
+	}
 	
 	/**
      * Returns product price block html
