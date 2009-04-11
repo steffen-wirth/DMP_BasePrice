@@ -27,8 +27,34 @@
  */
 class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 {
+    /**
+     * Since I can't register session messages in upgrade scripts...
+     * this little hack might do it
+     *
+	 * @param Varien_Event_Observer $observer
+     */
+    public function controllerActionLayoutLoadBefore($observer)
+    {
+        if (Mage::registry('baseprice_rebuild_flat_product_catalog'))
+        {
+            try
+            {
+                Mage::getResourceModel('catalog/product_flat_indexer')->rebuild();
+                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('baseprice')->__('Flat Catalog Product was rebuilt successfully after baseprice installation'));
+            }
+            catch (Mage_Core_Exception $e)
+            {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+            catch (Exception $e)
+            {
+                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('baseprice')->__('Error rebuilding flat product catalog:') . ' ' . $e->getMessage());
+            }
+        }
+    }
+
 	/**
-	 * Append the baseprice html if necessary (frontend) 
+	 * Append the baseprice html if necessary (frontend)
 	 *
 	 * @param Varien_Event_Observer $observer
 	 */
@@ -46,7 +72,7 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 		$html = $container->getHtml() . $block->toHtml();
 		$container->setHtml($html);
 	}
-	
+
 	/**
 	 * Set the default value on a product in the admin interface
 	 *
@@ -69,7 +95,7 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 			}
 		}
 	}
-	
+
 	/**
 	 * Check the unit types selected in the admin interface are compatible
 	 *

@@ -43,8 +43,19 @@
 				<connection><use>default_read</use></connection>
 			</baseprice_read>
 		</resources>
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <baseprice>
+                        <type>singleton</type>
+                        <class>baseprice/observer</class>
+                        <method>controllerActionLayoutLoadBefore</method>
+                    </baseprice>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
 	</global>
-	
+
     <frontend>
         <events>
         	<block_catalog_product_get_price_html>
@@ -74,7 +85,7 @@
             </modules>
         </translate>
     </frontend>
-    
+
     <adminhtml>
         <events>
 			<catalog_product_load_after>
@@ -106,7 +117,7 @@
             </modules>
         </translate>
 	</adminhtml>
-	
+
 	<default>
 		<catalog>
 			<baseprice>

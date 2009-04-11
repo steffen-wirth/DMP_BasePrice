@@ -1,6 +1,7 @@
 <?php
 
 $this->startSetup();
+$this->endSetup();
 
 try
 {
@@ -10,5 +11,3 @@ catch (Exception $e)
 {
     //Mage::log("Error building flat product catalog: " . $e->getMessage());
 }
-
-$this->endSetup();
