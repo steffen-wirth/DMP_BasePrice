@@ -63,7 +63,6 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 			}
 			$rate = $this->getConversionRate($productUnit, $this->getReferenceUnit());
 			$result = $productPrice / $productAmount / $rate * $this->getReferenceAmount();
-			//Mage::helper('baseprice')->log('('.$productPrice.' / '.$productAmount.') / '.$rate.' * '.$this->getReferenceAmount().'');
 			return $result;
 		}
 		catch (Exception $e)

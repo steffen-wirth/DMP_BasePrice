@@ -3,7 +3,7 @@
 
 	<modules>
 		<DerModPro_BasePrice>
-			<version>0.1.9</version>
+			<version>0.2.1</version>
 		</DerModPro_BasePrice>
 	</modules>
 
@@ -84,6 +84,16 @@
                 </DerModPro_BasePrice>
             </modules>
         </translate>
+		<product>
+			<collection>
+				<attributes>
+					<base_price_amount/>
+					<base_price_unit/>
+					<base_price_base_amount/>
+					<base_price_base_unit/>
+				</attributes>
+			</collection>
+		</product>
     </frontend>
 
     <adminhtml>

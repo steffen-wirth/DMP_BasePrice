@@ -77,6 +77,8 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
+0.2.1 Fixed source models to work wth fat cataog model in magento 1.3.1
+0.1.9 Automaticaly rebuild flat product catalog after installation
 0.1.8 Magento 1.3 compatibility release
 0.1.6 Removed debug log statements
 0.1.5 Add missing translation namespaces

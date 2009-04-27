@@ -28,5 +28,5 @@
 class DerModPro_BasePrice_Model_Entity_Source_Baseprice_Product_Unit
 	extends DerModPro_BasePrice_Model_Entity_Source_Baseprice_Abstract
 {
-	protected $_basePriceDefaultKey = 'default_base_price_unit';
+
 }
