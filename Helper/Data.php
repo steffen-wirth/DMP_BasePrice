@@ -44,6 +44,9 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$configKey = $shortLabel ? 'short_label' : 'frontend_label';
 		$label = $this->__($this->getConfig($configKey));
 		$label = str_replace('{{baseprice}}', Mage::helper('core')->currency($basePrice), $label);
+		$label = str_replace('{{product_amount}}', $productAmount, $label);
+		$label = str_replace('{{product_unit}}', $this->__($productUnit), $label);
+		$label = str_replace('{{product_unit_short}}', $this->__($productUnit . ' short'), $label);
 		$label = str_replace('{{reference_amount}}', $referenceAmount, $label);
 		$label = str_replace('{{reference_unit}}', $this->__($referenceUnit), $label);
 		$label = str_replace('{{reference_unit_short}}', $this->__($referenceUnit . ' short'), $label);
