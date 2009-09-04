@@ -27,7 +27,22 @@
  */
 class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 {
-	public function getBasePriceLabel($product, $shortLabel = false)
+	/**
+	 * Return the baseprice lable for the given product. If no baseprice is set return ''
+	 * Possible template "variables":
+	 *  {{baseprice}}			=> the baseprice value
+	 *  {{product_amount}}		=> the product amount
+	 *  {{product_unit}}		=> the product unit, full format
+	 *  {{product_unit_short}}	=> the product unit, short format
+	 *  {{reference_amount}}	=> the reference amount
+	 *  {{reference_unit}}		=> the reference unit, full format
+	 *  {{reference_unit_short}}=> the reference unit, short format
+	 *
+	 * @param Mage_Cataog_Model_Product $product
+	 * @param boolean|string $labelFormat FALSE = configured long lable, TRUE = configured short lable, "STRING" = the string is used as a format template
+	 * @return string
+	 */
+	public function getBasePriceLabel($product, $labelFormat = false)
 	{
 		if (! ($productAmount = $product->getBasePriceAmount())) return '';
 		if (! ($referenceAmount = $product->getBasePriceBaseAmount())) return '';
@@ -40,9 +55,16 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$productPrice = Mage::helper('tax')->getPrice($product, $productPrice, $this->getConfig('base_price_incl_tax'));
 		$basePriceModel = Mage::getModel('baseprice/baseprice', array('reference_unit' => $referenceUnit, 'reference_amount' => $referenceAmount));
 		$basePrice = $basePriceModel->getBasePrice($productAmount, $productUnit, $productPrice);
-		
-		$configKey = $shortLabel ? 'short_label' : 'frontend_label';
-		$label = $this->__($this->getConfig($configKey));
+
+		if (is_string($labelFormat))
+		{
+			$label = $labelFormat;
+		}
+		else
+		{
+			$configKey = $labelFormat ? 'short_label' : 'frontend_label';
+			$label = $this->__($this->getConfig($configKey));
+		}
 		$label = str_replace('{{baseprice}}', Mage::helper('core')->currency($basePrice), $label);
 		$label = str_replace('{{product_amount}}', $productAmount, $label);
 		$label = str_replace('{{product_unit}}', $this->__($productUnit), $label);
