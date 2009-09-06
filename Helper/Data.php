@@ -38,7 +38,7 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 	 *  {{reference_unit}}		=> the reference unit, full format
 	 *  {{reference_unit_short}}=> the reference unit, short format
 	 *
-	 * @param Mage_Cataog_Model_Product $product
+	 * @param Mage_Catalog_Model_Product $product
 	 * @param boolean|string $labelFormat FALSE = configured long lable, TRUE = configured short lable, "STRING" = the string is used as a format template
 	 * @return string
 	 */
