@@ -3,7 +3,7 @@
 
 	<modules>
 		<DerModPro_BasePrice>
-			<version>0.2.3</version>
+			<version>0.2.4</version>
 		</DerModPro_BasePrice>
 	</modules>
 
@@ -140,7 +140,7 @@
 				<default_base_price_amount></default_base_price_amount>
 				<default_base_price_base_unit>L</default_base_price_base_unit>
 				<default_base_price_base_amount>1</default_base_price_base_amount>
-				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM</units>
+				<units>KG,LBS,G,MG,L,ML,M,IN,CM,MM,PCS</units>
 				<!-- conversion tables -->
 				<convert>
 					<!-- weight -->
@@ -212,6 +212,12 @@
 							<IN>39.3700787402</IN>
 						</to>
 					</M>
+					<!-- misc -->
+					<PCS>
+						<to>
+							<PCS>1</PCS>
+						</to>
+					</PCS>
 				</convert>
 			</baseprice>
 		</catalog>

@@ -34,5 +34,6 @@ abstract class DerModPro_BasePrice_Model_Entity_Resource_Eav_Attribute_Abstract
 	{
 		$value = Mage::helper('baseprice')->getConfig($this->_basePriceDefaultKey);
 		return $value;
+		
 	}
 }
