@@ -50,6 +50,22 @@ abstract class DerModPro_BasePrice_Model_Entity_Source_Baseprice_Abstract
 		return Mage::helper('baseprice')->getConfig('default_' . $this->getAttribute()->getAttributeCode());
 	}
 
+	/**
+	 * Bugfix for Magento 1.3 - do not return the option array entry, only the label.
+	 *
+	 * @param mixed $value
+	 * @return string
+	 */
+	public function getOptionText($value)
+	{
+		$option = parent::getOptionText($value);
+		if (is_array($option) && isset($option['label']))
+		{
+			$option = $option['label'];
+		}
+		return $option;
+	}
+
 	public function getFlatColums()
 	{
 		return array($this->getAttribute()->getAttributeCode() => array(
