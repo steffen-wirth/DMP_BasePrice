@@ -77,6 +77,7 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
+0.2.5 Magento 1.4 update, BCP compatibility update
 0.2.4 Add Piece as a new unit
 0.2.3 Small refactoring, and: released as stable
 0.2.2 Added new format templates for the labels: {{product_amount}}, {{product_unit}} and {{product_unit_short}}
