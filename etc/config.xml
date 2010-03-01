@@ -54,6 +54,11 @@
                 </observers>
             </controller_action_layout_load_before>
         </events>
+		<bcp>
+			<update_selector_list>
+				<baseprice/>
+			</update_selector_list>
+		</bcp>
 	</global>
 
     <frontend>
@@ -67,6 +72,15 @@
 					</baseprice>
 				</observers>
         	</block_catalog_product_get_price_html>
+			<bcp_update_defaults_on_configurable_product>
+				<observers>
+					<baseprice>
+						<type>singleton</type>
+						<class>baseprice/observer</class>
+						<method>bcpUpdateDefaultsOnConfigurableProduct</method>
+					</baseprice>
+				</observers>
+			</bcp_update_defaults_on_configurable_product>
         </events>
         <layout>
             <updates>
@@ -221,5 +235,13 @@
 				</convert>
 			</baseprice>
 		</catalog>
+		<dermodpro_bcp>
+			<bcp>
+				<update_baseprice_dom_xpath_default><![CDATA[//div[@class="product-essential"]//div[@class="baseprice-box"]]]></update_baseprice_dom_xpath_default>
+				<update_baseprice_dom_csspath_default><![CDATA[.product-essential .baseprice-box]]></update_baseprice_dom_csspath_default>
+				<!-- use the price settings to decide if the baseprice block should be updated -->
+				<update_baseprice_handle>price</update_baseprice_handle>
+			</bcp>
+		</dermodpro_bcp>
 	</default>
 </config>

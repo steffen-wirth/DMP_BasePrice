@@ -119,5 +119,25 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 			}
 		}
 	}
+
+	/**
+	 * Set the default values if BCP is installed and price updates are configured.
+	 * If BCP is not installed this event will never be fired.
+	 *
+	 * @param Varien_Event_Observer $observer
+	 */
+	public function bcpUpdateDefaultsOnConfigurableProduct($observer)
+	{
+		$product = $observer->getEvent()->getProduct();
+		$simpleProduct = $observer->getEvent()->getSimpleProduct();
+
+		if (Mage::helper('bcp')->getConfig('update_price'))
+		{
+			foreach (array('base_price_amount', 'base_price_unit', 'base_price_base_amount', 'base_price_base_unit') as $attributeCode)
+			{
+				$product->setDataUsingMethod($attributeCode, $simpleProduct->getDataUsingMethod($attributeCode));
+			}
+		}
+	}
 }
 
