@@ -131,12 +131,10 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 		$product = $observer->getEvent()->getProduct();
 		$simpleProduct = $observer->getEvent()->getSimpleProduct();
 
-		if (Mage::helper('bcp')->getConfig('update_price'))
+		foreach (array('base_price_amount', 'base_price_unit', 'base_price_base_amount', 'base_price_base_unit') as $attributeCode)
 		{
-			foreach (array('base_price_amount', 'base_price_unit', 'base_price_base_amount', 'base_price_base_unit') as $attributeCode)
-			{
-				$product->setDataUsingMethod($attributeCode, $simpleProduct->getDataUsingMethod($attributeCode));
-			}
+			$value = $simpleProduct->getDataUsingMethod($attributeCode);
+			$product->setDataUsingMethod($attributeCode, $value);
 		}
 	}
 }
