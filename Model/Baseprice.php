@@ -73,9 +73,11 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 	
 	public function getConversionRate($fromUnit, $toUnit)
 	{
+		$fromUnit = trim(strtoupper($fromUnit));
+		$toUnit = trim(strtoupper($toUnit));
 		if ($fromUnit === $toUnit) return 1;
 		$h = Mage::helper('baseprice');
-		$rate = $h->getConfig(sprintf('convert/%s/to/%s', strtoupper($fromUnit), strtoupper($toUnit)));
+		$rate = $h->getConfig(sprintf('convert/%s/to/%s', $fromUnit, $toUnit));
 		if (! isset($rate) || ! $rate)
 		{
 			Mage::throwException($h->__('Conversion rate not found for %s to %s', $h->__($fromUnit), $h->__($toUnit)));

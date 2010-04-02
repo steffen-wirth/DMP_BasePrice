@@ -77,6 +77,7 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
+0.2.9 Avoid error when fromUnit or toUnit isn't set (Thanks to Jörg Weller!)
 0.2.8 Another release because of a Magento Connect error :-(
 0.2.7 New version because of Magento Connect error :-/
 0.2.6 BCP compatibility upgrade
