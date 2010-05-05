@@ -66,7 +66,6 @@ class DerModPro_BasePrice_Model_Observer extends Mage_Core_Model_Abstract
 			! Mage::helper('baseprice')->getConfig('auto_append_base_price')
 		) return;
 		$block = $observer->getBlock();
-		$product = $block->getProduct();
 		$container = $observer->getContainer();
 		$block->setTemplate('baseprice/baseprice.phtml');
 		$html = $container->getHtml() . $block->toHtml();
