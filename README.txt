@@ -77,6 +77,7 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
+0.3.0 Load default values on existing products when the extension was installed
 0.2.9 Avoid error when fromUnit or toUnit isn't set (Thanks to Jörg Weller!)
 0.2.8 Another release because of a Magento Connect error :-(
 0.2.7 New version because of Magento Connect error :-/

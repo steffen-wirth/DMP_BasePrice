@@ -45,6 +45,9 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 	public function getBasePriceLabel($product, $labelFormat = false)
 	{
 		if (! ($productAmount = $product->getBasePriceAmount())) return '';
+
+		$this->_loadDefaultBasePriceValues($product);
+
 		if (! ($referenceAmount = $product->getBasePriceBaseAmount())) return '';
 		if (! ($productPrice = $product->getFinalPrice())) return '';
 		if (! is_numeric($productAmount) || ! is_numeric($referenceAmount) || ! is_numeric($productPrice)) return '';
@@ -73,6 +76,26 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		$label = str_replace('{{reference_unit}}', $this->__($referenceUnit), $label);
 		$label = str_replace('{{reference_unit_short}}', $this->__($referenceUnit . ' short'), $label);
 		return $label;
+	}
+
+	/**
+	 * Set the configuration default values on the product model.
+	 * Used when products allready existed when the extension was installed.
+	 *
+	 * @param Mage_Catalog_Model_Product $product
+	 * @return DerModPro_BasePrice_Helper_Data
+	 */
+	protected function _loadDefaultBasePriceValues($product)
+	{
+		foreach (array('base_price_base_amount', 'base_price_unit', 'base_price_base_unit') as $attributeCode)
+		{
+			if (! $product->getDataUsingMethod($attributeCode))
+			{
+				$attribute = Mage::getModel('eav/entity_attribute')->loadByCode('catalog_product', $attributeCode);
+				$product->setDataUsingMethod($attributeCode, $attribute->getFrontend()->getValue($product));
+			}
+		}
+		return $this;
 	}
 	
 	/**
