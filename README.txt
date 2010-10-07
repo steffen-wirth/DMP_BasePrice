@@ -77,6 +77,7 @@ Afterwards don't forget to clear the cache.
 
 
 CHANGELOG
+0.3.1 Move frontend theme files to base interface
 0.3.0 Load default values on existing products when the extension was installed
 0.2.9 Avoid error when fromUnit or toUnit isn't set (Thanks to Jörg Weller!)
 0.2.8 Another release because of a Magento Connect error :-(
