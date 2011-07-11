@@ -2,18 +2,18 @@
 # BasePrice modman file
 #
 
-code app/code/community/DerModPro/BasePrice
+app/code/community/DerModPro/BasePrice app/code/community/DerModPro/BasePrice
 
-DerModPro_BasePrice.xml app/etc/modules/DerModPro_BasePrice.xml
+app/etc/modules/DerModPro_BasePrice.xml app/etc/modules/DerModPro_BasePrice.xml
 
-design/frontend/base/default/layout/baseprice.xml app/design/frontend/base/default/layout/baseprice.xml
-design/frontend/base/default/layout/baseprice.xml app/design/frontend/default/default/layout/baseprice.xml
+app/design/frontend/base/default/layout/baseprice.xml app/design/frontend/base/default/layout/baseprice.xml
+app/design/frontend/base/default/layout/baseprice.xml app/design/frontend/default/default/layout/baseprice.xml
 
-design/frontend/base/default/template/baseprice app/design/frontend/base/default/template/baseprice
-design/frontend/base/default/template/baseprice app/design/frontend/default/default/template/baseprice
+app/design/frontend/base/default/template/baseprice app/design/frontend/base/default/template/baseprice
+app/design/frontend/base/default/template/baseprice app/design/frontend/default/default/template/baseprice
 
 skin/frontend/base/default/css/baseprice.css skin/frontend/base/default/css/baseprice.css
 skin/frontend/base/default/css/baseprice.css skin/frontend/default/default/css/baseprice.css
 
-locale/de_DE/DerModPro_BasePrice.csv app/locale/de_DE/DerModPro_BasePrice.csv
-locale/en_US/DerModPro_BasePrice.csv app/locale/en_US/DerModPro_BasePrice.csv
+app/locale/de_DE/DerModPro_BasePrice.csv app/locale/de_DE/DerModPro_BasePrice.csv
+app/locale/en_US/DerModPro_BasePrice.csv app/locale/en_US/DerModPro_BasePrice.csv
