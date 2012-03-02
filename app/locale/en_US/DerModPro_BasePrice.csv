@@ -5,6 +5,7 @@
 "L","Liter"
 "ML","Milliliter (ml)",
 "M","Meter (m)",
+"M2","Square meter (m²)"
 "IN","Inch"
 "CM","Centimeter (cm)"
 "MM","Millimeter (mm)"
@@ -16,14 +17,15 @@
 "L short","L"
 "ML short","Ml",
 "M short","M",
-"IN short","Zoll"
+"M2 short","Sq m"
+"IN short","In"
 "CM short","Cm"
 "MM short","Mm"
 "PCS short","Pc"
 "The product unit amount must be greater the zero","The product unit amount must be greater the zero!"
 "Conversion rate not found for %s to %s","Conversion rate not found for %s to %s!"
 "Reference unit not set","Reference unit not set!"
-"Reference amount not set","DReference amount not set!"
+"Reference amount not set","Reference amount not set!"
 "Baseprice Extension","Baseprice Extension"
 "Disable BasePrice Extension","Disable Extension"
 "The default packaging unit to use on products for the base price (can be set on a product level, too)","The default packaging unit to use on products for the base price (can be set on a product level, too)"
