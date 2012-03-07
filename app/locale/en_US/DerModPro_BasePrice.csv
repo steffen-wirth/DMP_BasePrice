@@ -5,7 +5,7 @@
 "L","Liter"
 "ML","Milliliter (ml)",
 "M","Meter (m)",
-"M2","Square meter (m²)"
+"SQM","Square meter (m²)"
 "IN","Inch"
 "CM","Centimeter (cm)"
 "MM","Millimeter (mm)"
@@ -17,7 +17,7 @@
 "L short","L"
 "ML short","Ml",
 "M short","M",
-"M2 short","Sq m"
+"SQM short","Sq m"
 "IN short","In"
 "CM short","Cm"
 "MM short","Mm"

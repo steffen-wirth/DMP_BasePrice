@@ -154,7 +154,7 @@
 				<default_base_price_amount></default_base_price_amount>
 				<default_base_price_base_unit>L</default_base_price_base_unit>
 				<default_base_price_base_amount>1</default_base_price_base_amount>
-				<units>KG,LBS,G,MG,L,ML,M,M2,IN,CM,MM,PCS</units>
+				<units>KG,LBS,G,MG,L,ML,M,SQM,IN,CM,MM,PCS</units>
 				<!-- conversion tables -->
 				<convert>
 					<!-- weight -->
@@ -227,11 +227,11 @@
 						</to>
 					</M>
 					<!-- area -->
-					<M2>
+					<SQM>
 						<to>
-							<M2>1</M2>
+							<SQM>1</SQM>
 						</to>
-					</M2>
+					</SQM>
 					<!-- misc -->
 					<PCS>
 						<to>
