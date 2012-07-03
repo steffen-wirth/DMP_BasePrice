@@ -70,11 +70,11 @@ class DerModPro_BasePrice_Helper_Data extends Mage_Core_Helper_Abstract
 		}
 		$label = str_replace('{{baseprice}}', Mage::helper('core')->currency($basePrice), $label);
 		$label = str_replace('{{product_amount}}', $productAmount, $label);
-		$label = str_replace('{{product_unit}}', $this->__($productUnit), $label);
-		$label = str_replace('{{product_unit_short}}', $this->__($productUnit . ' short'), $label);
+		$label = str_replace('{{product_unit}}', $this->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX.$productUnit), $label);
+		$label = str_replace('{{product_unit_short}}', $this->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX_SHORT.$productUnit), $label);
 		$label = str_replace('{{reference_amount}}', $referenceAmount, $label);
-		$label = str_replace('{{reference_unit}}', $this->__($referenceUnit), $label);
-		$label = str_replace('{{reference_unit_short}}', $this->__($referenceUnit . ' short'), $label);
+		$label = str_replace('{{reference_unit}}', $this->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX.$referenceUnit), $label);
+		$label = str_replace('{{reference_unit_short}}', $this->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX_SHORT.$referenceUnit), $label);
 		return $label;
 	}
 

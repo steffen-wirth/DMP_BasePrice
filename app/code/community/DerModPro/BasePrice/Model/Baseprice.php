@@ -27,6 +27,16 @@
  */
 class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 {
+    /*
+     * Prefix to retrieve the correct long unit description
+     */
+    const UNIT_TRANSLATION_PREFIX = 'UNIT_';
+    
+    /*
+     * Prefix to retrieve the correct short unit description
+     */
+    const UNIT_TRANSLATION_PREFIX_SHORT = 'UNIT_SHORT_';
+    
 	public function __construct(array $params = null)
 	{
 		if (isset($params['reference_unit'])) $this->setReferenceUnit($params['reference_unit']);
@@ -80,7 +90,12 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		$rate = $h->getConfig(sprintf('convert/%s/to/%s', $fromUnit, $toUnit));
 		if (! isset($rate) || ! $rate)
 		{
-			Mage::throwException($h->__('Conversion rate not found for %s to %s', $h->__($fromUnit), $h->__($toUnit)));
+			Mage::throwException($h->__(
+			    'Conversion rate not found for %s to %s',
+			    $h->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX.$fromUnit),
+			    $h->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX.$toUnit)
+                )
+            );
 		}
 		return $rate;
 	}
@@ -93,7 +108,7 @@ class DerModPro_BasePrice_Model_Baseprice extends Varien_Object
 		{
 			$options[] = array(
 				'value' => $unit,
-				'label' => $h->__($unit)
+				'label' => $h->__(DerModPro_BasePrice_Model_Baseprice::UNIT_TRANSLATION_PREFIX.$unit)
             );
 		}
 		return $options;
