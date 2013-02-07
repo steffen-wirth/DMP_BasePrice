@@ -30,7 +30,11 @@ ChangeLog
      - **Datum**
      - **Beschreibung**
 
-  
+   * - 13.02.07
+     - 07.02.2013
+     - Bugfixes:
+     
+       * Fixed wrong package path for en/Us locale 
 
    * - 13.01.25
      - 25.01.2013

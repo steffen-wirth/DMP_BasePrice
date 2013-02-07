@@ -1,5 +1,5 @@
 <_>
-   <form_key>Vh2Ph9Mo5gQvtB3A</form_key>
+   <form_key>8ewGWBywM1H6o5v6</form_key>
    <name>DerModPro_BasePrice</name>
    <channel>community</channel>
    <version_ids>
@@ -10,12 +10,12 @@
    <description>The Baseprice Module (Basic) enables you to enhance Magento simple products with options to configure and display the base price (&quot;reference price&quot;), for example the product unit like milliliter, gram, centimeter; the amount of the packaging unit, the unit the price should be calculated for and many other helpful options. This is required according to the German law (PAngV §2).</description>
    <license>OSL 3.0</license>
    <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
-   <version>13.01.31</version>
+   <version>13.02.07</version>
    <stability>stable</stability>
    <notes>Bugfixes:
 
- - Fixed translation error with Mage_Customer 
- - Fixed price update bug with Custom Options </notes>
+ - Fixed wrong package path for en_Us locale 
+  </notes>
    <authors>
       <name>
          <name>Netresearch App Factory AG</name>
@@ -44,7 +44,7 @@
             <max/>
          </max>
          <files>
-            <files>         </files>
+            <files>                </files>
          </files>
       </package>
       <extension>
@@ -63,37 +63,25 @@
       <target>
          <target>magelocal</target>
          <target>magecommunity</target>
-         <target>magecommunity</target>
-         <target>magecommunity</target>
-         <target>magecommunity</target>
-         <target>magecommunity</target>
          <target>magedesign</target>
          <target>magedesign</target>
          <target>mageetc</target>
          <target>magelocale</target>
-         <target>magelocal</target>
+         <target>magelocale</target>
          <target>mageskin</target>
       </target>
       <path>
          <path/>
-         <path>DerModPro/BasePrice/Block</path>
-         <path>DerModPro/BasePrice/Helper</path>
-         <path>DerModPro/BasePrice/Model</path>
-         <path>DerModPro/BasePrice/sql</path>
-         <path>DerModPro/BasePrice/etc</path>
+         <path>DerModPro/BasePrice/</path>
          <path>frontend/base/default/template/baseprice</path>
          <path>frontend/base/default/layout/baseprice.xml</path>
          <path>modules/DerModPro_BasePrice.xml</path>
          <path>de_DE/DerModPro_BasePrice.csv</path>
-         <path>en_US/en_US</path>
+         <path>en_US/DerModPro_BasePrice.csv</path>
          <path>frontend/base/default/css/baseprice.css</path>
       </path>
       <type>
          <type>file</type>
-         <type>dir</type>
-         <type>dir</type>
-         <type>dir</type>
-         <type>dir</type>
          <type>dir</type>
          <type>dir</type>
          <type>file</type>
@@ -111,16 +99,8 @@
          <include/>
          <include/>
          <include/>
-         <include/>
-         <include/>
-         <include/>
-         <include/>
       </include>
       <ignore>
-         <ignore/>
-         <ignore/>
-         <ignore/>
-         <ignore/>
          <ignore/>
          <ignore/>
          <ignore/>
