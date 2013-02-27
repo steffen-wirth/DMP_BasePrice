@@ -55,7 +55,7 @@ endobj
 % 'R6': class PDFInfo 
 6 0 obj
 << /Author ()
- /CreationDate (D:20130207130928-01'00')
+ /CreationDate (D:20130227095417-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -72,28 +72,28 @@ endobj
 % 'R8': class PDFStream 
 8 0 obj
 % page stream
-<< /Length 4115 >>
+<< /Length 4020 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 741.0236 cm
+1 0 0 1 62.69291 769.3701 cm
 q
-0 0 0 rg
+0 .533333 .603922 rg
 BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 112.7049 0 Td (Grundpreis Modul \(Basis\)) Tj T* -112.7049 0 Td ET
 Q
 Q
 q
-1 0 0 1 62.69291 711.0236 cm
+1 0 0 1 62.69291 739.3701 cm
 q
-0 0 0 rg
+0 .533333 .603922 rg
 BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL 193.6949 0 Td (ChangeLog) Tj T* -193.6949 0 Td ET
 Q
 Q
 q
-1 0 0 1 62.69291 695.0236 cm
+1 0 0 1 62.69291 723.3701 cm
 Q
 q
-1 0 0 1 62.69291 569.0236 cm
+1 0 0 1 62.69291 597.3701 cm
 1 1 1 rg
 n 0 126 469.8898 -18 re f*
 .878431 .878431 .878431 rg
@@ -104,7 +104,7 @@ n 0 72 469.8898 -54 re f*
 n 0 18 469.8898 -18 re f*
 .960784 .960784 .862745 rg
 n 0 126 469.8898 -18 re f*
-0 0 0 rg
+0 .533333 .603922 rg
 BT /F1 10 Tf 12 TL ET
 q
 1 0 0 1 6 111 cm
@@ -113,7 +113,7 @@ q
 n 0 0 46.73622 12 re f*
 Q
 q
-0 0 0 rg
+0 .533333 .603922 rg
 BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 2.52811 0 Td (Revision) Tj T* -2.52811 0 Td ET
 Q
 Q
@@ -124,7 +124,7 @@ q
 n 0 0 46.73622 12 re f*
 Q
 q
-0 0 0 rg
+0 .533333 .603922 rg
 BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 7.81311 0 Td (Datum) Tj T* -7.81311 0 Td ET
 Q
 Q
@@ -135,7 +135,7 @@ q
 n 0 0 340.4173 12 re f*
 Q
 q
-0 0 0 rg
+0 .533333 .603922 rg
 BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 136.8687 0 Td (Beschreibung) Tj T* -136.8687 0 Td ET
 Q
 Q
@@ -304,40 +304,29 @@ n 469.8898 0 m 469.8898 126 l S
 Q
 Q
 q
-1 0 0 1 62.69291 569.0236 cm
+1 0 0 1 62.69291 597.3701 cm
 Q
 q
-1 0 0 1 62.69291 569.0236 cm
+1 0 0 1 62.69291 597.3701 cm
 Q
 q
 1 0 0 1 56.69291 56.69291 cm
-1 1 1 rg
-n 0 18 481.8898 -18 re f*
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
 1 0 0 1 6 3 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Stand: 07.02.2013) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Stand: 27.02.2013) Tj T* ET
 Q
 Q
 q
 1 0 0 1 246.9449 3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (1/1) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 215.0449 0 Td (1/1) Tj T* -215.0449 0 Td ET
 Q
 Q
 q
-1 J
-1 j
-0 0 0 RG
-.25 w
-n 240.9449 0 m 240.9449 18 l S
-n 0 18 m 481.8898 18 l S
-n 0 0 m 481.8898 0 l S
-n 0 0 m 0 18 l S
-n 481.8898 0 m 481.8898 18 l S
 Q
 Q
  
@@ -371,17 +360,17 @@ xref
 0000000991 00000 n
 0000001260 00000 n
 0000001365 00000 n
-0000005579 00000 n
-0000005661 00000 n
-0000005754 00000 n
+0000005484 00000 n
+0000005566 00000 n
+0000005659 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\2213\323c\274\335e\033;0\234\265.\343\271J) (\2213\323c\274\335e\033;0\234\265.\343\271J)] 
+ [(y\262\226@qw\240 *\353\345\304\011\3030g) (y\262\226@qw\240 *\353\345\304\011\3030g)] 
 
  /Info 6 0 R
  /Root 5 0 R
  /Size 12 >>
 startxref
-5801
+5706
 %%EOF
