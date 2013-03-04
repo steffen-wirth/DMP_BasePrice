@@ -27,19 +27,19 @@ DOC_SOURCE_PATH:=$(DOCPATH)/src
 
 all: clean version doc zip
 
-doc: $(DOC_PUBLIC_PATH)/ChangeLog.pdf $(DOC_PUBLIC_PATH)/Specification.pdf $(DOC_INTERN_PATH)/KnownIssues.pdf
+doc: $(DOC_PUBLIC_PATH)/ChangeLog.pdf $(DOC_INTERN_PATH)/Specification.pdf $(DOC_INTERN_PATH)/KnownIssues.pdf $(DOC_INTERN_PATH)/Entwicklerdokumentation.pdf
 
 $(DOC_PUBLIC_PATH)/ChangeLog.pdf: $(DOC_SOURCE_PATH)/ChangeLog.rst $(DOC_SOURCE_PATH)/netresearch.style
 		rst2pdf -b 1 -o $(DOC_PUBLIC_PATH)/ChangeLog.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/ChangeLog.rst --real-footnotes
 		
-$(DOC_PUBLIC_PATH)/Specification.pdf: $(DOC_SOURCE_PATH)/Specification.rst $(DOC_SOURCE_PATH)/netresearch.style
-		rst2pdf -b 1 -o $(DOC_PUBLIC_PATH)/Specification.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/Specification.rst --real-footnotes
+$(DOC_INTERN_PATH)/Specification.pdf: $(DOC_SOURCE_PATH)/Specification.rst $(DOC_SOURCE_PATH)/netresearch.style
+		rst2pdf -b 1 -o $(DOC_INTERN_PATH)/Specification.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/Specification.rst --real-footnotes
 		
 $(DOC_INTERN_PATH)/KnownIssues.pdf: $(DOC_SOURCE_PATH)/KnownIssues.rst $(DOC_SOURCE_PATH)/netresearch.style
 		rst2pdf -b 1 -o $(DOC_INTERN_PATH)/KnownIssues.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/KnownIssues.rst --real-footnotes
 
-$(DOC_INTERN_PATH)/KnownIssues.pdf: $(DOC_SOURCE_PATH)/KnownIssues.rst $(DOC_SOURCE_PATH)/netresearch.style
-		rst2pdf -b 1 -o $(DOC_INTERN_PATH)/KnownIssues.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/KnownIssues.rst --real-footnotes
+$(DOC_INTERN_PATH)/Entwicklerdokumentation.pdf: $(DOC_SOURCE_PATH)/Entwicklerdokumentation.rst $(DOC_SOURCE_PATH)/netresearch.style
+		rst2pdf -b 1 -o $(DOC_INTERN_PATH)/Entwicklerdokumentation.pdf -s $(DOC_SOURCE_PATH)/netresearch.style $(DOC_SOURCE_PATH)/Entwicklerdokumentation.rst --real-footnotes
 
 
 
