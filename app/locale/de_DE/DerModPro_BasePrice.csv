@@ -11,14 +11,14 @@
 "UNIT_PCS","Stück (St)"
 "UNIT_SHORT_KG","Kg"
 "UNIT_SHORT_LBS","Lbs"
-"UNIT_SHORT_G","Gr"
-"UNIT_SHORT_MG","Mg"
-"UNIT_SHORT_L","L"
-"UNIT_SHORT_ML","Ml",
-"UNIT_SHORT_M","M",
+"UNIT_SHORT_G","gr"
+"UNIT_SHORT_MG","mg"
+"UNIT_SHORT_L","l"
+"UNIT_SHORT_ML","ml",
+"UNIT_SHORT_M","m",
 "UNIT_SHORT_IN","Zoll"
-"UNIT_SHORT_CM","Cm"
-"UNIT_SHORT_MM","Mm"
+"UNIT_SHORT_CM","cm"
+"UNIT_SHORT_MM","mm"
 "UNIT_SHORT_PCS","St"
 "The product unit amount must be greater the zero","Die Menge der Produkteinheit muss größer Null sein!"
 "Conversion rate not found for %s to %s","Umrechnungsfaktor nicht gefunden für %s nach %s!"
