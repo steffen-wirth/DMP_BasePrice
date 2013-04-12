@@ -2,7 +2,7 @@
 # Start edit here
 VENDOR:=DerModPro
 MODULE:=BasePrice
-ARCHIVE_COLLECTION:=app skin modman
+ARCHIVE_COLLECTION:=app skin
 # End edit here
 ######################################################
 
@@ -12,11 +12,13 @@ MODULE_KEY:=$(VENDOR)_$(MODULE)
 DATE:=$(shell date +%s)
 VERSION:=$(shell grep "<version>" app/code/community/$(VENDOR)/$(MODULE)/etc/config.xml | sed -e :a -e 's/<[^>]*>//g;/</N;//ba;s/ //g')
 
-#Paths and zip-file
+#Paths for tar and zip-file
 MODULE_PATH:=$(shell pwd)
 TMPPATH:=/tmp/$(MODULE).$(DATE)
 ZIPNAME:=$(MODULE)_$(VERSION).zip
+TARNAME:=$(MODULE)_$(VERSION).tar
 ZIPFILE:=/tmp/$(ZIPNAME)
+TARFILE:=/tmp/$(TARNAME)
 
 # Doc folders
 DOCPATH:=doc
@@ -25,7 +27,7 @@ DOC_INTERN_PATH:=$(DOCPATH)/Intern
 DOC_SOURCE_PATH:=$(DOCPATH)/src
 ######################################################
 
-all: clean version doc zip
+all: clean version doc zip tar
 
 doc: $(DOC_PUBLIC_PATH)/ChangeLog.pdf $(DOC_INTERN_PATH)/Specification.pdf $(DOC_INTERN_PATH)/KnownIssues.pdf $(DOC_INTERN_PATH)/Entwicklerdokumentation.pdf
 
@@ -64,5 +66,21 @@ zip:
 		cd $(MODULE_PATH)
 		cp -f $(ZIPFILE) $(ZIPNAME)
 		rm -f $(ZIPFILE)
+
+tar:
+		@echo === Creating tar file $(TARFILE) from $(TMPPATH)
+		rm -f $(TARFILE)
+		rm -f $(TARNAME)
+		rm -rf $(TMPPATH)
+		mkdir -p $(TMPPATH)/doc
+		cp -r $(ARCHIVE_COLLECTION) $(TMPPATH)
+		cp -r doc/$(MODULE_KEY) $(TMPPATH)/doc/
+		
+		cd $(TMPPATH) && tar -cf $(TARFILE) *
+		rm -rf $(TMPPATH)
+		cd $(MODULE_PATH)
+		cp -f $(TARFILE) $(TARNAME)
+		rm -f $(TARFILE)
+
 .PHONY: doc
 
