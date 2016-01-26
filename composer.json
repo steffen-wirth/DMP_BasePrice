@@ -1,6 +1,6 @@
 {
   "name": "schnumsel/dmp-baseprice",
-  "description": "Fork des Modul zur Grundpreisverordnung von DerModPro"
+  "description": "Fork des Modul zur Grundpreisverordnung von DerModPro",
   "license":"OSL-3.0",
   "type": "magento-module",
   "extra": {
